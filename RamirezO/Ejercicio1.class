@@ -1,0 +1,38 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package RamirezO;
+
+import java.io.PrintStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Ejercicio1 {
+   public Ejercicio1() {
+   }
+
+   public static void ejecutar() {
+      System.out.println("Ingresaste al ejercicio 1");
+      System.out.println();
+      Scanner var0 = new Scanner(System.in);
+      DateTimeFormatter var1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+      System.out.println("Ingrese la primera fecha y hora (formato yyyy-MM-dd HH:mm:ss)");
+      String var2 = var0.nextLine();
+      LocalDateTime var3 = LocalDateTime.parse(var2, var1);
+      System.out.println("Ingrese la segunda fecha y hora (formato yyyy-MM-dd HH:mm:ss)");
+      String var4 = var0.nextLine();
+      LocalDateTime var5 = LocalDateTime.parse(var4, var1);
+      PrintStream var10000 = System.out;
+      String var10001 = var3.format(var1);
+      var10000.println("Primera fecha ingresada: " + var10001);
+      var10000 = System.out;
+      var10001 = var5.format(var1);
+      var10000.println("Segunda fecha ingresada: " + var10001);
+      if (var3.isAfter(var5)) {
+         System.out.println("La primera fecha es mayor");
+      } else if (var5.isAfter(var3)) {
+         System.out.println("La segunda fecha es mayor");
+      }
+
+      var0.close();
+   }
+}
